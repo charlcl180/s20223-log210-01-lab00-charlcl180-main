@@ -1,5 +1,10 @@
 # Squelette pour un API simple dans Node, Express et TypeScript
-  
+
+#### Redémarrer
+
+1. Le Joueur demande à redémarrer l'application.
+2. Le Système termine tous les jeux en cours et redémarre l'application.  
+
 ## Identification de l'étudiant
   Nom: Entrer votre nom 
   Courriel: Entrer votre courriel

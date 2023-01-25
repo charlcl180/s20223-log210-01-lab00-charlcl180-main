@@ -1,0 +1,10 @@
+@startuml
+skinparam style strictuml
+skinparam defaultfontname Verdana
+skinparam sequence {
+    MessageAlign center
+}
+title DSS pour le scénario <i>Redémarrer</i>\n
+actor "Joueur" as c
+participant ":Système" as s
+c->s : redémarrerJeu()
