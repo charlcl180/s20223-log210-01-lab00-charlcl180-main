@@ -14,6 +14,8 @@ class Joueur {
     -_nom: string
     -_nbLancers: number
     -_nbLancersGagnes: number
+    -ratio: number
+
     +nom: string
     -assainirNom(nom: string): string
     +lancers: number
@@ -32,6 +34,7 @@ class JeuDeDes {
     -_joueurs: Map<string, Joueur>
     -_d1: De
     -_d2: De
+    -_d3: De
     +demarrerJeu(nom: string): string
     +jouer(nom: string): string
     +terminerJeu(nom: string): string
@@ -47,6 +50,7 @@ class JeuRouter {
     +jouer(req: Request<ParamsDictionary, any, any, QueryString.ParsedQs, Record<string, any>>, res: Response<any, Record<string, any>>, next: NextFunction): void
     -_errorCode500(error: any, req: Request<ParamsDictionary, any, any, QueryString.ParsedQs, Record<string, any>>, res: Response<any, Record<string, any>>): void
     +terminerJeu(req: Request<ParamsDictionary, any, any, QueryString.ParsedQs, Record<string, any>>, res: Response<any, Record<string, any>>, next: NextFunction): void
+    +redemarrerJeu(req: Request<ParamsDictionary, any, any, QueryString.ParsedQs, Record<string, any>>, res: Response<any, Record<string, any>>, next: NextFunction): void
     +init(): void
 }
 class App {
