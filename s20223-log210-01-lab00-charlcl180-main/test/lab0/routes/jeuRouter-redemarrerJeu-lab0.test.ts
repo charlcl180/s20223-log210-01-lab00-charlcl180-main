@@ -10,11 +10,23 @@ const testNom2 = 'Jean-Marc';
 
 beforeAll(async () => {
   await request.post('/api/v1/jeu/redemarrerJeu').send({nom: testNom1})
-  await request.post('/api/v1/jeu/redemarrerJeu').send({nom: testNom1})
+  await request.post('/api/v1/jeu/redemarrerJeu').send({nom: testNom2})
 });
 
 describe('redemarrerJeu.test.ts', () => {
-  it("should implement test", async () => {
-    throw new Error("Ce test n'a pas été défini")
+
+  it('devrait répondre 200 OK et renvoyer Du JSON', async () => {
+    const response = await request.get('/api/v1/jeu/redemarrerJeu').send();
+    expect(response.status).toBe(200)
+    expect(response.type).toBe("application/json");
   });
-});
+
+  
+  it("devrait avec une mauvaise demande lorsqu'il n'y a pas de joueur", async () => {
+    await request.get('/api/v1/jeu/redemarrerJeu').send();
+    const response = await request.get('/api/v1/jeu/redemarrerJeu'+testNom1);
+    expect(response.status).toBe(404)
+    expect(response.type).toBe("text/html");
+  
+  }) ;
+  });

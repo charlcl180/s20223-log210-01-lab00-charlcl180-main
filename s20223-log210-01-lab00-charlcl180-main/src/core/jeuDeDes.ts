@@ -10,11 +10,14 @@ export class JeuDeDes {
     private _joueurs: Map<string, Joueur>;
     private _d1: De;
     private _d2: De;
+    private _d3: De;
+
 
     constructor() {
         this._joueurs = new Map<string, Joueur>();
         this._d1 = new De();
         this._d2 = new De();
+        this._d3 = new De();
     }
 
     /**
@@ -31,6 +34,12 @@ export class JeuDeDes {
         this._joueurs.set(nom, joueur);
         // ne pas retourner l'objet de la couche domaine
         return JSON.stringify(joueur);
+    }
+
+    public redemarrerJeu() {
+
+        this._joueurs.clear();
+       
     }
 
     public jouer(nom: string): string {

@@ -163,7 +163,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
           11 | describe('README identification', () => {
           12 |   it('devrait trouver votre nom', () => {
-        > 13 |     expect(content.includes("Entrer votre nom")).toBeFalsy();
+        > 13 |     expect(content.includes("Clayton Charles-Augustin")).toBeFalsy();
             |                                                  ^
           14 |   });
           15 |
@@ -179,7 +179,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
           15 |
           16 |   it('devrait trouver votre courriel', () => {
-        > 17 |     expect(content.includes("Entrer votre courriel")).toBeFalsy();
+        > 17 |     expect(content.includes("charlcl180@gmail.com")).toBeFalsy();
             |                                                       ^
           18 |   });
           19 |
@@ -195,7 +195,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
           19 |
           20 |   it('devrait trouver Votre code moodle', () => {
-        > 21 |     expect(content.includes("Entrer votre code moodle obtenu à partir de Signets")).toBeFalsy();
+        > 21 |     expect(content.includes("ColaMoodle")).toBeFalsy();
             |                                                                                     ^
           22 |   });
           23 |
@@ -211,7 +211,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
           23 |
           24 |   it("devrait trouver votre compte github", () => {
-        > 25 |     expect(content.includes("Entrer l'identifiant de votre compte github")).toBeFalsy();
+        > 25 |     expect(content.includes("charlcl180")).toBeFalsy();
             |                                                                             ^
           26 |   });
           27 | });
