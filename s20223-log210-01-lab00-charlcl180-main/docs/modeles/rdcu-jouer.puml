@@ -20,11 +20,15 @@ c->d2 : brasser()
 note right : selon Expert
 c->d2 : v2 = valeur
 note right : selon Expert
+c->d3 : brasser()
+note right : selon Expert
+c->d3 : v3 = valeur
+note right : selon Expert
+opt v1 + v2 + v3 <= 10
 c->j : incNbParties()
 note right : selon Expert
-opt v1 + v2 == 7
-  c->j : incNbPartiesGagnees()
-  note right : selon Expert
+c->j : incNbPartiesGagnees()
+note right : selon Expert
 end opt
 c->j : p = nbParties
 note right : selon Expert

@@ -5,7 +5,7 @@ import app from '../../../src/app'
 
 const request = supertest(app)
 const testNom1 = 'Jean-Marc';
-const testNom2 = 'Jean-Marc';
+const testNom2 = 'Jean';
 
 
 beforeAll(async () => {
@@ -22,11 +22,13 @@ describe('redemarrerJeu.test.ts', () => {
   });
 
   
-  it("devrait avec une mauvaise demande lorsqu'il n'y a pas de joueur", async () => {
+  it("devrait contenir un test pour jouer qui retourne 404 (après redemarrerJeu()", async () => {
     await request.get('/api/v1/jeu/redemarrerJeu').send();
-    const response = await request.get('/api/v1/jeu/redemarrerJeu'+testNom1);
-    expect(response.status).toBe(404)
-    expect(response.type).toBe("text/html");
+    const response = await request.get('/api/v1/jeu/jouer/' + testNom1);
+    expect(response.status).toBe(404);
+    expect(response.type).toBe("application/json");
+    expect(response.body.error).toInclude("n'existe pas");
+    expect(response.body.error).toInclude(testNom1);
   
   }) ;
   });
